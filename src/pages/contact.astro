@@ -1,0 +1,51 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../config";
+---
+
+<Base title="Contact" description="Book a 30-minute intro call or send a message about your project.">
+  <h1>Let's talk</h1>
+  <p class="lede">
+    I'm always glad to hear about an interesting problem. Tell me a little about what you're
+    working on and I'll reply within two business days, usually sooner.
+  </p>
+
+  <div class="actions">
+    <a class="button" href={site.bookingUrl} data-booking>Book a 30-minute intro call</a>
+  </div>
+
+  <h2>Or send a message</h2>
+  <form class="contact" method="post" action="/api/contact" data-contact-form>
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required maxlength="200" />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required maxlength="320" />
+    </div>
+    <div class="field">
+      <label for="organization">Organization <span class="optional">(optional)</span></label>
+      <input id="organization" name="organization" type="text" autocomplete="organization" maxlength="200" />
+    </div>
+    <div class="field">
+      <label for="message">What can I help with?</label>
+      <textarea id="message" name="message" required maxlength="5000"></textarea>
+    </div>
+    <!-- Honeypot: hidden from people, tempting to bots. -->
+    <div class="hp" aria-hidden="true">
+      <label for="website">Leave this empty</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey}></div>
+    <div>
+      <button class="button" type="submit">Send</button>
+    </div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>
+
+  <p>Prefer email? <a href={`mailto:${site.email}`}>{site.email}</a></p>
+
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script is:inline src="/contact.js" defer></script>
+</Base>

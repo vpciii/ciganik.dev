@@ -1,0 +1,59 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../config";
+---
+
+<Base description="Independent consulting: AI-assisted development, AI-powered features and agents, and software architecture from an engineer with 30+ years of shipping high-stakes software.">
+  <section class="hero">
+    <h1>{site.name}</h1>
+    <p class="tagline">{site.tagline}</p>
+    <p class="lede">
+      I've written software for 30+ years, much of it where mistakes are expensive:
+      medical device firmware, clinical decision support, and systems that hospitals and
+      health plans run every day. Now I help teams put AI to work, both in how they build
+      software and in what they ship, with the specs, tests, and review that make it
+      trustworthy.
+    </p>
+    <p>I take on a small number of interesting projects at a time. If yours is one, let's talk.</p>
+    <div class="actions">
+      <a class="button" href={site.bookingUrl} data-booking>Book a call</a>
+      <a class="button secondary" href="/contact/">Send a message</a>
+    </div>
+  </section>
+
+  <h2>What I help with</h2>
+  <ul class="cards">
+    <li class="card">
+      <h3>AI-assisted development</h3>
+      <p>Get your team productive with AI coding tools without giving up quality.</p>
+    </li>
+    <li class="card">
+      <h3>AI-powered features &amp; agents</h3>
+      <p>LLM integrations, agents, and MCP servers that hold up in production.</p>
+    </li>
+    <li class="card">
+      <h3>Architecture &amp; modernization</h3>
+      <p>Design new systems, and replace aging ones without stopping the work they do.</p>
+    </li>
+    <li class="card">
+      <h3>High-stakes &amp; regulated systems</h3>
+      <p>Security, compliance, and integration where the data is sensitive.</p>
+    </li>
+    <li class="card">
+      <h3>Fractional technology leadership</h3>
+      <p>A senior technical voice for small teams and nonprofits.</p>
+    </li>
+  </ul>
+  <p><a href="/services/">More about each service →</a></p>
+
+  <h2>Background</h2>
+  <ul class="proof">
+    <li>30+ years of software and firmware engineering, from assembly language to AI agents.</li>
+    <li>15 years as a Staff Software Engineer at MedKeeper / Becton Dickinson, on HIPAA-regulated systems.</li>
+    <li>Built a pharmaceutical dosing product, Doseresponse, that BD later acquired.</li>
+    <li>
+      I publish my AI development methodology as open source:
+      <a href="https://github.com/vpciii/methodology">vpciii/methodology</a>.
+    </li>
+  </ul>
+</Base>

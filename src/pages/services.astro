@@ -1,0 +1,90 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../config";
+---
+
+<Base title="Services" description="AI-assisted development, AI-powered features and agents, architecture and modernization, regulated systems, and fractional technology leadership.">
+  <h1>Services</h1>
+  <p class="lede">Five kinds of work, all with the same habits: write it down, test it, review it.</p>
+
+  <section class="service" id="ai-assisted-development">
+    <h2>AI-assisted development, done carefully</h2>
+    <p>
+      AI coding tools can make a team dramatically faster, or quietly fill a codebase with
+      plausible-looking mistakes. Which one you get depends on process. I use Claude Code
+      and Cursor every day inside a spec-first workflow: written specs and decisions up
+      front, tests that trace back to requirements, and human review of every change. I help
+      teams adopt the tools and that discipline together.
+    </p>
+    <p class="fit"><strong>Good fit if:</strong> your developers are experimenting with AI tools and you want consistency, or you've tried them and the results were uneven.</p>
+  </section>
+
+  <section class="service" id="ai-features">
+    <h2>AI-powered features &amp; agents</h2>
+    <p>
+      Adding an LLM to a product is easy to demo and hard to make dependable. I design and
+      build AI features, multi-step agents, and Model Context Protocol (MCP) servers that
+      connect AI tools to your systems. I build them with clear boundaries on what the AI can
+      touch, tests that check behavior, and an honest look at where a model shouldn't be in
+      the loop at all.
+    </p>
+    <p class="fit"><strong>Good fit if:</strong> you have a use case in mind and want it built properly, or you need to know whether AI is the right tool for it.</p>
+    <p><strong>See it in practice:</strong></p>
+    <ul>
+      <li>
+        <a href="https://github.com/vpciii/opn-mcp">opn-mcp</a> is a read-only MCP server that
+        lets AI assistants monitor a firewall's security health without being able to change
+        anything.
+      </li>
+      <li>
+        <a href="https://github.com/vpciii/agent-framework">agent-framework</a> is a
+        work-in-progress orchestration layer where AI agents plan, build, and check each
+        other's work, with a human signing off on every change.
+      </li>
+    </ul>
+  </section>
+
+  <section class="service" id="architecture">
+    <h2>Architecture &amp; modernization</h2>
+    <p>
+      Plenty of important software is ten or twenty years old and still running. I've spent a
+      career bridging old systems and new ones, from lab instruments to Java/Spring
+      applications. I modernize in steps you can reverse, keeping the current system running
+      until its replacement has proven itself. AI tools now make that kind of migration faster
+      to plan and safer to test. For new systems, I help you make the architectural decisions
+      that are expensive to reverse, and write them down.
+    </p>
+    <p class="fit"><strong>Good fit if:</strong> you have a critical application only one person understands, or you're about to make a big technical bet.</p>
+  </section>
+
+  <section class="service" id="regulated-systems">
+    <h2>High-stakes &amp; regulated systems</h2>
+    <p>
+      Nearly thirty years of healthcare software taught me how to build systems that handle
+      sensitive data: HIPAA-compliant architecture, security reviews and remediation, and
+      HL7 / Mirth Connect integration with hospital EMRs. The same habits carry over to any
+      domain where privacy, auditability, or safety matter.
+    </p>
+    <p class="note">
+      I'm an engineer, not an auditor or lawyer. I make systems defensible; formal compliance
+      attestation is a separate service.
+    </p>
+    <p class="fit"><strong>Good fit if:</strong> your system touches health, financial, or personal data, or it has to integrate with healthcare systems.</p>
+  </section>
+
+  <section class="service" id="leadership">
+    <h2>Fractional technology leadership</h2>
+    <p>
+      Small organizations and nonprofits often need senior technical judgment but can't
+      justify a full-time CTO. I've served as a nonprofit's CIO for over a decade, handling its
+      technology strategy, vendor and build-vs-buy decisions, infrastructure, and budget. I
+      also mentor University of Pittsburgh capstone teams.
+    </p>
+    <p class="fit"><strong>Good fit if:</strong> you're making technology decisions, including whether and how to use AI, without a senior technologist in the room.</p>
+  </section>
+
+  <div class="actions">
+    <a class="button" href={site.bookingUrl} data-booking>Book a call</a>
+    <a class="button secondary" href="/contact/">Send a message</a>
+  </div>
+</Base>
