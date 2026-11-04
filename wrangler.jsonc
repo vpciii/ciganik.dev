@@ -1,0 +1,32 @@
+// Cloudflare Worker config (ADR-0001). No secrets here (spec R-7):
+// TURNSTILE_SECRET is set with `wrangler secret put TURNSTILE_SECRET`
+// (locally, in a git-ignored .dev.vars file).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ciganik-dev",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-11-04",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  },
+  "routes": [
+    { "pattern": "ciganik.dev", "custom_domain": true },
+    { "pattern": "www.ciganik.dev", "custom_domain": true }
+  ],
+  "vars": {
+    // TODO(launch): confirm both addresses.
+    "CONTACT_TO": "hello@ciganik.dev",
+    "CONTACT_FROM": "contact@ciganik.dev"
+  },
+  "send_email": [
+    {
+      "name": "EMAIL",
+      // Belt and braces: this binding can only ever email my own inbox.
+      "allowed_destination_addresses": ["hello@ciganik.dev"]
+    }
+  ],
+  "observability": { "enabled": true }
+}
